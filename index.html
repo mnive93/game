@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<script type="text/javascript">
+function load()
+{
+var aud= new Audio('clown.mp3');
+aud.play();
+}
+function sound()
+{
+var a1 = new Audio('crank.mp3');
+a1.play();
+}
+</script>
+<style type="text/css">
+body
+{
+background-image:url('bg.gif');
+height:690px;
+width:1400px;
+position:fixed;
+}
+
+#button
+{
+height:600px;
+width:600px;
+margin-left:520px;
+margin-top:190px;
+
+}
+#button img
+{
+height:100px;
+width:300px;
+ -webkit-transition: all 1s ease; 
+
+}
+#button img:hover 
+{ 
+height: 133px; 
+width: 400px; 
+ }
+
+
+</style>
+</head>
+<body onload="load()">
+<div id="header">
+</div>
+<div id="button">
+<table>
+<tr>
+<td>
+<a href="game.html"><img src="play.gif" onmouseover="sound()"/></a>
+</td>
+
+</tr>
+<tr>
+<td>
+<a href="rules.html"><img src="rules.gif "onmouseover="sound()"/></a>
+</td>
+
+</tr>
+<tr>
+<td>
+<a href="quit.html"><img src="quit.gif" onmouseover="sound()"/></a>
+</td>
+
+</tr>
+
+</table>
+</div>
+</body>
+</html>

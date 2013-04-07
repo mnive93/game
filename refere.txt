@@ -1,0 +1,67 @@
+	 /**document.addEventListener("DOMContentLoaded", init, false);
+
+      function init()
+      {
+        var canvas = document.getElementById("can");
+        canvas.addEventListener("mousedown", getPosition, false);
+      }
+
+      function getPosition(event)
+      {
+        var x = new Number();
+        var y = new Number();
+        var canvas = document.getElementById("can");
+
+        if (event.x != undefined && event.y != undefined)
+        {
+          x = event.x;
+          y = event.y;
+        }
+        else // Firefox method to get the position
+        {
+          x = event.clientX + document.body.scrollLeft +
+              document.documentElement.scrollLeft;
+          y = event.clientY + document.body.scrollTop +
+              document.documentElement.scrollTop;
+        }
+
+        x -= canvas.offsetLeft;
+        y -= canvas.offsetTop;
+if(flag==1)
+		var d = document.getElementById('img1');
+  else if(flag==2)
+  	var d = document.getElementById('img2');
+  d.style.visibility='visible';
+  d.style.position = "absolute";
+  d.style.left = x;
+  d.style.top = y;
+  d.style.zIndex="2";
+  if(flag==1)
+  {
+  alert("hereee in fiiiiithrooow");
+ 
+  document.getElementById("throw").src="fish.gif";
+  document.getElementById("farm-09_").style.background="url(cat1.png)";
+  flag=2;
+d.style.visibility='hidden';  
+  d.style.left='400px';
+ d.style.top='250px';
+
+   
+  }
+  else if(flag==2) 
+  {
+  alert("hereee in throoow");
+ 
+  document.getElementById("chees").src="cheese.gif";
+  document.getElementById("farm-12_").style.background="url(mou2.png)";
+  flag=1;
+  
+  d.style.left='1000px';
+  d.style.top='300px';
+  d.style.visibility='hidden';
+   
+  }
+  
+	   // alert("x: " + x + "  y: " + y);
+      }**/

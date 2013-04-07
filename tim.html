@@ -1,0 +1,44 @@
+<html>
+<head>
+<script type="text/javascript">
+function timer(){
+  var date = new Date();
+  var h, m;
+  var s;
+  var t = " ";
+  h = date.getHours();
+  m = date.getMinutes();
+  s = date.getSeconds();
+  if (h <= 9) h = "0" + h;
+  if (m <= 9) m = "0" + m;
+  if (s <= 9) s = "0" + s;
+  t += h + ":" + m + ":" + s; 
+  document.getElementById("tim").innerHTML = t;
+  gizmo = setTimeout("timer()", 1000);
+}
+</script>
+<style type="text/css">
+body
+{
+background-color:Black;
+}
+p
+{
+color:yellow;
+font-family:Comic San Ms;
+font-size:large;
+}
+#timer
+{
+margin-left:600px;
+margin-top:300px;
+width:100px;
+height:100px;
+bacground-color:Black;
+}
+</style>
+</head>
+<body onload="timer()">
+<div id="timer">
+<p id="tim"></p>
+</body>

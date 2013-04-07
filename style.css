@@ -1,0 +1,101 @@
+body
+{
+background-color:Black;
+position:fixed;
+}
+#can
+{
+position:relative;
+background-image:url('des.jpg');
+width:1350px;
+height:690px;
+}
+
+#farm-09_ {
+	position:absolute;
+	left: -100px;
+	top:280px;
+	width:500px;
+	height:500px;
+background-image:url('cat1.png');
+	
+-webkit-transition: all 0.5s ease; 
+
+
+	}
+#arrow
+{
+position:absolute;
+top:300px;
+left:620px;
+
+height:100px;
+width:100px;}
+#farm-12_ {
+	position:absolute;
+	left:1150px;
+	top:430px;
+	width:200px;
+	height:200px;
+background-image:url('mou2.png');
+}
+div
+{
+position:absolute;
+}
+
+#score
+{
+position:absolute;
+top:150px;
+left:10px;
+background-image:url('plank.png');
+width:300px;
+height:90px;
+}
+#score1
+{
+position:absolute;
+top:150px;
+left:1050px;
+background-image:url('plank.png');
+width:300px;
+height:90px;
+}
+#coin
+{
+top:250px;
+left:125px;
+width:100px;
+height:100px;
+-webkit-transition: all 0.5s ease; 
+
+}
+#coin2
+{
+top:250px;
+left:1050px;
+width:100px;
+height:100px;
+-webkit-transition: all 0.5s ease; 
+
+}
+p
+{
+font-family:10 Cent Soviet;
+font-style:oblique;
+font-size:60px;
+font-weight:bolder;
+color:#FFD700;
+margin-left:130px;
+margin-top:10px;
+}
+#tim
+{
+top:200px;
+left:550px;
+height:100px;
+width:100px;
+-webkit-transition: all 0.5s ease; 
+
+}

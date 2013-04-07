@@ -1,0 +1,152 @@
+<html>
+<head>
+<script language="javascript">
+
+var w3c=(document.getElementById)?true:false;
+var ns4=(document.layers)?true:false;
+var ie4=(document.all && !w3c)?true:false;
+var ie5=(document.all && w3c)?true:false;
+var ns6=(w3c && navigator.appName.indexOf("Netscape")>=0)?true:false;
+var inflight, colatrel, tmt, colatarcher, oldcolatarcher, isHit, tmp;
+var cntr, cntr2, points;
+var targets=[2,2,2,2,2,2,2,2,2,2];
+var images=new Array();
+for(a=0;a<7;a++){
+images[a]=new Image(); 
+images[a].src="pic"+a+".gif";
+
+}
+
+function startscroll(){
+//updatepos();
+//cntr++;
+for(q=10;q>=1;q--){
+targets[q]=targets[q-1];
+
+d['cr_'+q+0].src="pic"+targets[q-1]+".gif";
+}
+targets[0]=Math.floor(Math.random()*4+2)
+d.cr_00.src="pic"+targets[0]+".gif";
+}
+
+function shootarrow(){
+if(!inflight){
+inflight=true;
+cntr2=8;
+d['cr_'+colatrel+8].src="pic0.gif";
+d['cr_'+colatarcher+9].src="pic6.gif";
+setTimeout('fly()',10);
+}
+}
+
+function movearrow(left){
+alert("movee");
+if(left){
+if(colatarcher!=0)colatarcher--;
+}else{
+if(colatarcher!=10)colatarcher++;
+}
+updatepos();
+}
+
+function updatepos(){
+
+d['cr_'+oldcolatarcher+9].src="pic5.gif";
+tmp=(inflight)?6:1;
+//alert(tmp);
+d['cr_'+colatarcher+9].src="pic"+tmp+".gif";
+oldcolatarcher=colatarcher;
+if(!inflight)colatrel=colatarcher;
+}
+
+function fly(){
+if(cntr2>0){
+d['cr_'+colatrel+cntr2].src="pic2.gif";
+d['cr_'+colatrel+(cntr2-1)].src="pic0.gif";
+cntr2--;
+alert("flyyyyyy"+cntr2);
+setTimeout('fly()',10);
+}else{
+
+d['cr_'+colatarcher+9].src="pic1.gif";
+alert("arch"+colatarcher);
+alert(colatrel);
+switch(targets[colatrel]){
+case 2: points--;
+showtext('Nothin\' but air!');
+break;
+case 5: points++;
+showtext('Pop!');
+break;
+default: points=points-2;
+showtext('What\'d he do to you?');
+break;
+}
+targets[colatrel]=2;
+inflight=false;
+document.f.t.value=points;
+}}
+
+function showtext(text){
+clearTimeout(tmt);
+document.f.t2.value=text;
+tmt=setTimeout('document.f.t2.value="Shoot the balloons..."', 2000);
+}
+
+function showkey(keypress){
+wk=(ie4||ie5)?event.keyCode:keypress.which;
+switch(wk){
+case 52: movearrow(true);
+break;
+case 54: movearrow(false);
+break;
+case 32: shootarrow();
+break;
+}
+return false;
+}
+
+window.onload=function(){
+d=document.images;
+points=0;
+cntr2=0;
+inflight=false;
+colatrel=5;
+colatarcher=5;
+oldcolatarcher=5;
+d.cr_59.src="pic1.gif";
+if(ns4)document.captureEvents(Event.KEYPRESS);
+document.onkeypress=showkey;
+alert('INSTRUCTIONS:\n\n- Make sure your Numlock is on.\n- Use the numberpad arrow (or 4 and 6) keys to move the archer.\n- Use the spacebar to fire the arrow.\n- Try to aim for the balloons only.\n- If you hit a balloon, you gain 1 point.\n- If you hit nothing, you lose 1 point.\n- If you hit an animal, you lose 2 points.'+((ns6)?'\nFor NS6 users, click the document with the mouse first.':''));
+setInterval('startscroll()',350);
+}
+
+</script>
+
+</head>
+<body>
+<form name="f">
+<table cellspacing=0 cellpadding=0 border=0 bgcolor="black">
+<script language="javascript">
+var t='';
+for(row=0;row<10;row++){
+t+='<tr height="40">';
+for(col=0;col<11;col++){
+t+='<td width="40" align="center">';
+t+='<img src="pic2.gif" border="0" name="cr_'+col+row+'">';
+t+='</td>';
+}
+t+='</tr>';
+}
+document.write(t);
+</script>
+<tr><td colspan="5" align="center">
+<font color="white"><b>Score</b></font><br>
+<input type="text" size="4" value="0" name="t">
+<br><br></td><td> </td>
+<td colspan="5" align="center">
+<font color="white"><b>Status Area</b></font><br>
+<input type="text" size="20" name="t2" value="Shoot the balloons...">
+<br><br></td></tr></table></form>
+</body>
+</html>

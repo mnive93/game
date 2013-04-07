@@ -1,0 +1,122 @@
+<script type="text/javascript">
+var flag;
+//var idcounter;
+var dtag,ctag,cimg;
+var pic = new Array();
+var pic1 = new Array();
+function load()
+{
+
+flag=1;
+}
+function ran_pic()
+{
+
+for(var i=0;i<4;i++)
+		{
+		
+		var left = Math.floor((Math.random()*500)+100);
+		
+		var top = Math.floor((Math.random()*150)+1);
+		pic[i]=left+(i*150);
+		pic1[i]=top+(i*10);
+		var d = document.getElementById("ball"+i);
+		d.style.visibility="visible";
+		d.style.left=pic[i]+"px";
+		
+		d.style.top=pic1[i]+"px";
+		
+		d.style.background="url(ball.gif)";
+
+	 	}
+
+}
+
+		function show() {
+	var a;
+alert(flag);
+if(flag!=2)
+{
+		document.getElementById("farm-09_").style.background='url(cat2.png)';
+		setTimeout(ran_pic,1000);
+		
+		//document.getElementById("farm-09_").style.background='url(cat1.png)';
+		
+		flag=2;
+		}
+		
+		
+
+		}
+function show2()
+	{
+	if(flag!=1)
+	{
+	alert("heree:"+flag);
+			 document.getElementById("farm-12_").style.background="url(mou1.png)";
+ran_pic();
+			 document.getElementById("farm-12_").style.background="url(mou2.png)";
+
+flag=1;
+
+			 }
+	}
+
+	function play(elem)
+	{
+alert(flag);	
+	 dtag = document.getElementById(elem);
+	setTimeout(hide,1000);
+	
+	}
+	function hide(elem)
+	{
+	dtag.style.visibility='hidden';
+
+
+	}
+	
+</script>
+
+#ball0
+{
+
+width:100px;
+height:100px;
+left:10px;
+top:30px;
+
+}
+
+#ball1
+{
+width:100px;
+height:100px;
+left:60px;
+top:70px;
+
+}
+#ball2
+{
+width:100px;
+height:100px;
+left:110px;
+top:90px;
+-webkit-transition: all 1s ease; }
+#ball3
+{
+width:100px;
+height:100px;
+left:160px;
+top:100px;
+-webkit-transition: all 1s ease; 
+}
+<div id="ball0" onclick="play('ball0')">
+</div>
+	<div id="ball1" onclick="play('ball1')">
+</div>
+	<div id="ball2" onclick="play('ball2')">
+</div>
+	<div id="ball3" onclick="play('ball3')">
+</div>
+
