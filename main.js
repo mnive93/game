@@ -9,7 +9,7 @@ var cntr,doc,sh,tim;
 var images=new Array();
 for(a=2;a<5;a++){
 images[a]=new Image(); 
-images[a].src="pic"+a+".gif";
+images[a].src="images/pic"+a+".gif";
 }
 var targets=[2,2,2,2,2,2,2,2,2,2,2,2];
 function load()
@@ -48,7 +48,7 @@ if(cntr>0)
 sh=sh-50;
 
 d.style.top = sh + "px";
-d.style.background='url(pic0.gif)';
+d.style.background='url(images/pic0.gif)';
 d.style.visibility="visible";
 cntr--;
 //alert(cntr);
@@ -56,14 +56,14 @@ setTimeout(shoot,40);
 }
 else
 {
-var a2 = new Audio("shoot.wav");
+var a2 = new Audio("sounds/shoot.wav");
 a2.play();
 var d1= document.getElementById("cr_60");
 switch(targets[6])
 {
 case 2: break;
 case 3: 
-d1.src="pic2.gif";
+d1.src="images/pic2.gif";
 if(flag==2)
 {
 count-=1;
@@ -79,7 +79,7 @@ d2.innerHTML=count1;
 }
 break;
 case 4 : 
-d1.src="pic2.gif";
+d1.src="images/pic2.gif";
 if(flag==2)
 {
 count+=1;
@@ -95,9 +95,9 @@ d2.innerHTML=count1;
 }
 break;
 case 5: 
-var a = new Audio("fart.wav");
+var a = new Audio("sounds/fart.wav");
 a.play();
-d1.src="pic2.gif";
+d1.src="images/pic2.gif";
 if( flag==2)
 {
 if(count>0)
@@ -147,13 +147,13 @@ for(q=12;q>=1;q--)
 targets[q]=targets[q-1];
 var name = 'cr_'+q+0;
  d = document.getElementById(name);
-var name2="pic"+targets[q-1]+".gif";
+var name2="images/pic"+targets[q-1]+".gif";
 d.src=name2;
 
 }
 targets[0]=Math.floor(Math.random()*3+3);
 
-document.getElementById("cr_00").src="pic"+targets[0]+".gif";
+document.getElementById("cr_00").src="images/pic"+targets[0]+".gif";
 
 }
 
@@ -164,7 +164,7 @@ if(flag!=2)
 {
 
 		var cat=document.getElementById("farm-09_");
-		cat.style.background='url(cat2.png)';
+		cat.style.background='url(images/cat2.png)';
 		cat.style.left='410px';
 	
 	did=	setInterval('startscroll()',400);
@@ -210,7 +210,7 @@ clearInterval(tim);
 	{
 clearInterval(did);
 	var cat=document.getElementById("farm-09_");
-	cat.style.background='url(cat1.png)';
+	cat.style.background='url(images/cat1.png)';
 	cat.style.left='-100px';
 turn+=1;
 	}	
@@ -219,7 +219,7 @@ turn+=1;
 	clearInterval(did);
 			 
 			 var mouse=document.getElementById("farm-12_");
-	mouse.style.background="url(mou2.png)";
+	mouse.style.background="url(images/mou2.png)";
 	mouse.style.left='1150px';
 turn+=1;
 	}
@@ -238,7 +238,7 @@ function show2()
 	{
 			
 var mou= document.getElementById("farm-12_");
-		mou.style.background="url(mou1.png)";
+		mou.style.background="url(images/mou1.png)";
 		mou.style.left='550px';
 	
 	did=	setInterval('startscroll()',400);
